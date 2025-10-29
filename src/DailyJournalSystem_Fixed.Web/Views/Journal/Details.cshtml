@@ -1,0 +1,11 @@
+@model DailyJournalSystem_Fixed.Infrastructure.Entities.JournalEntry
+@{
+    ViewData["Title"] = "Entry Details";
+}
+<h2>Entry Details</h2>
+<div class="mb-3"><strong>Date:</strong> @Model.Date.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</div>
+<div class="mb-3"><strong>Content:</strong><div class="border p-3">@Model.Content</div></div>
+<p>
+    <a class="btn btn-secondary" href="/Journal">Back</a>
+    <a class="btn btn-primary" href="/Journal/Edit/@Model.Id">Edit</a>
+</p>

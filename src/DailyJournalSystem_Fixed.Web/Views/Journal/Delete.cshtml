@@ -1,0 +1,13 @@
+@model DailyJournalSystem_Fixed.Infrastructure.Entities.JournalEntry
+@{
+    ViewData["Title"] = "Delete Entry";
+}
+<h2>Delete Entry</h2>
+<div class="mb-3"><strong>Date:</strong> @Model.Date.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</div>
+<div class="mb-3"><strong>Content:</strong><div class="border p-3">@Model.Content</div></div>
+
+<form method="post" asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-secondary" href="/Journal">Cancel</a>
+</form>
